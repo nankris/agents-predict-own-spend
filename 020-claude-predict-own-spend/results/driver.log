@@ -1,0 +1,24 @@
+start 1792008371 jobs=22 P=2
+opus__N01_median__r1: pass=True sub=None tok=60650 cc=13302 cr=46932 out=410 cost=$0.12402640000000001 turns=3 tools={'Bash': 2} wall=7s 5h=0.87 7d=0.73 
+opus__N02_duration__r1: pass=True sub=None tok=62336 cc=14239 cr=47662 out=429 cost=$0.1320484 turns=3 tools={'Bash': 2} wall=9s 5h=0.88 7d=0.73 
+opus__N03_csv__r1: pass=True sub=None tok=85723 cc=14503 cr=70362 out=850 cost=$0.1471284 turns=4 tools={'Bash': 3} wall=10s 5h=0.89 7d=0.73 
+opus__T02_duplicate__r1: pass=True sub=None tok=52371 cc=9167 cr=42642 out=556 cost=$0.0930084 turns=4 tools={'Bash': 2, 'Edit': 1} wall=9s 5h=0.89 7d=0.73 
+opus__T05_stale__r1: pass=True sub=None tok=51729 cc=8851 cr=42264 out=608 cost=$0.09144479999999999 turns=3 tools={'Bash': 2} wall=9s 5h=0.9 7d=0.73 
+opus__T06_neardup__r1: pass=True sub=None tok=52105 cc=9049 cr=42736 out=314 cost=$0.0872432 turns=3 tools={'Bash': 2} wall=12s 5h=0.9 7d=0.73 
+opus__T07_multihunk__r1: pass=True sub=None tok=52118 cc=9004 cr=42626 out=482 cost=$0.0902212 turns=3 tools={'Bash': 2} wall=8s 5h=0.9 7d=0.73 
+opus__T08_insert__r1: pass=True sub=None tok=51890 cc=8940 cr=42538 out=406 cost=$0.0881716 turns=3 tools={'Bash': 2} wall=7s 5h=0.91 7d=0.73 
+opus__T09_delete__r1: pass=True sub=None tok=51739 cc=8863 cr=42529 out=341 cost=$0.0862538 turns=3 tools={'Bash': 2} wall=6s 5h=0.91 7d=0.73 
+opus__T10_replace_all__r1: pass=True sub=None tok=51965 cc=8956 cr=42612 out=391 cost=$0.0880144 turns=3 tools={'Bash': 2} wall=7s 5h=0.91 7d=0.73 
+haiku__N01_median__r1: pass=True sub=None tok=99006 cc=18654 cr=79443 out=901 cost=$0.004976530000000001 turns=5 tools={'Bash': 2, 'Read': 1, 'Edit': 1} wall=9s 5h=0.92 7d=0.73 
+haiku__N02_duration__r1: pass=True sub=None tok=76156 cc=11286 cr=63645 out=1217 cost=$0.00350295 turns=6 tools={'Bash': 3, 'Edit': 2} wall=9s 5h=0.93 7d=0.73 
+opus__SUITE14__r1: pass=True sub=(14, 14) tok=99245 cc=23348 cr=73674 out=2215 cost=$0.2458508 turns=4 tools={'Bash': 3} wall=21s 5h=0.93 7d=0.73 
+haiku__T02_duplicate__r1: pass=True sub=None tok=73764 cc=10233 cr=62763 out=760 cost=$0.0030550300000000002 turns=5 tools={'Bash': 2, 'Read': 1, 'Edit': 1} wall=8s 5h=0.93 7d=0.73 
+haiku__N03_csv__r1: pass=True sub=None tok=103359 cc=20284 cr=81656 out=1411 cost=$0.005579660000000001 turns=5 tools={'Bash': 3, 'Edit': 1} wall=13s 5h=0.93 7d=0.73 
+haiku__T06_neardup__r1: pass=True sub=None tok=73479 cc=10224 cr=62481 out=766 cost=$0.0030534100000000003 turns=5 tools={'Bash': 3, 'Edit': 1} wall=8s 5h=0.93 7d=0.73 
+haiku__T05_stale__r1: pass=True sub=None tok=73689 cc=10341 cr=62076 out=1264 cost=$0.0033217600000000004 turns=5 tools={'Bash': 3, 'Edit': 1} wall=14s 5h=0.93 7d=0.73 
+haiku__T08_insert__r1: pass=True sub=None tok=73345 cc=10026 cr=62547 out=764 cost=$0.0030134700000000003 turns=5 tools={'Bash': 2, 'Read': 1, 'Edit': 1} wall=8s 5h=0.93 7d=0.73 
+haiku__T07_multihunk__r1: pass=True sub=None tok=74763 cc=10629 cr=62959 out=1167 cost=$0.0033396900000000006 turns=6 tools={'Bash': 3, 'Edit': 2} wall=13s 5h=0.93 7d=0.73 
+haiku__T09_delete__r1: pass=True sub=None tok=73419 cc=10170 cr=62371 out=870 cost=$0.0030935100000000003 turns=5 tools={'Bash': 3, 'Edit': 1} wall=8s 5h=0.93 7d=0.73 
+haiku__T10_replace_all__r1: pass=True sub=None tok=73908 cc=10248 cr=62851 out=801 cost=$0.0030794100000000003 turns=5 tools={'Bash': 3, 'Write': 1} wall=9s 5h=0.93 7d=0.73 
+haiku__SUITE14__r1: pass=True sub=(14, 14) tok=141485 cc=27518 cr=109340 out=4617 cost=$0.0089065 turns=5 tools={'Bash': 4} wall=26s 5h=0.93 7d=0.73 
+done 1792008499
