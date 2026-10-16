@@ -1,0 +1,1 @@
+This directory holds 14 small JavaScript packages. `node run_all.js` runs every package's test.js. Make `node run_all.js` pass by fixing the code. Do not edit any test.js or run_all.js.
