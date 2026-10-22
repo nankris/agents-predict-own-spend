@@ -1,6 +1,6 @@
-# #020 Can Codex predict its own spend? (Codex arm)
+# Can Codex predict its own token spend? (Codex counterpart)
 
-**Question.** Ask the agent, before it starts, how many tokens and model calls the task will take. How close is it? Codex CLI counterpart of `020-claude-predict-own-spend` (same tasks, same estimate prompt).
+**Question.** Ask the agent, before it starts, how many tokens and model calls the task will take. How close is it? Codex CLI counterpart of [`claude-predict-own-spend`](../claude-predict-own-spend/) (same tasks, same estimate prompt).
 
 **Short answer (this build, these tasks).** 22/22 runs passed and every run gave a parseable `ESTIMATE` line as its first message. Codex (gpt-6.1-sol) was **roughly right on total tokens, way off on output, and couldn't tell tasks apart**:
 - **Total tokens: slight underestimate.** Median actual/estimate **1.30** (range 0.90–2.51); 19/22 within 0.5–2×. It guessed 28K–65K for the single-package tasks, which all cost 58K–85K. Log-correlation 0.57 overall, but that's almost all the "one package vs 14 packages" split (SUITE14 guesses of 90K/95K were within 6% of the actual 95K). **Among the 10 single-package tasks the log-correlation was 0.25.**
@@ -20,9 +20,9 @@ Same direction as the Claude arm for output (both overestimate it 3–8×), oppo
 
 ## Exact commands
 ```bash
-source /workspace/tools/setup.sh
+# activate a Python environment with matplotlib and numpy; Codex CLI on PATH
 scripts/driver.sh scripts/jobs.txt 3 results/driver.log
-/workspace/tools/mlenv/bin/python scripts/analyze.py
+python scripts/analyze.py
 ```
 
 ## Results
@@ -34,7 +34,7 @@ scripts/driver.sh scripts/jobs.txt 3 results/driver.log
 
 Mean actual total on single-package tasks: 63.1K tokens. Mean wall 18.8 s. Per-run estimates vs actuals: `results/estimates.csv`. Chart: `results/chart.png` (estimate vs actual, log-log, SUITE14 in red).
 
-Comparison with the Claude arm (from `../020-claude-predict-own-spend/README.md`, same tasks/prompt, 1 run per task):
+Comparison with the Claude arm (from `../claude-predict-own-spend/README.md`, same tasks/prompt, 1 run per task):
 
 | Model | actual/est total | actual/est output | actual/est calls | log-corr total |
 |---|---|---|---|---|
@@ -46,8 +46,8 @@ Comparison with the Claude arm (from `../020-claude-predict-own-spend/README.md`
 - The estimate is a blind guess before reading files; an "after reading the code" estimate might do better. Not tested.
 - Small, homogeneous tasks: the actual range is narrow (58K–95K), which caps how much any predictor can show. The total-token correlation is mostly one big-vs-small distinction.
 - 2 reps per task; estimates varied between reps, so the medians are more meaningful than any single run.
-- Asking for the estimate adds a few output tokens per run (the #014 default arm, no estimate, averaged 61.1K total / 293 output on similar tasks vs 63.1K / 345 here).
-- Other Codex experiments (#018 Codex arm) ran on the same account in the same minutes; rate-limit percentages in `runs.csv` include them.
+- Asking for the estimate adds a few output tokens per run (a default arm with no estimate, from my [compression vs code edits study](https://github.com/nankris/compression-vs-code-edits), averaged 61.1K total / 293 output on similar tasks vs 63.1K / 345 here).
+- Other Codex runs (from my [diffs vs full files study](https://github.com/nankris/diffs-vs-full-files)) used the same account in the same minutes; rate-limit percentages in `runs.csv` include them.
 
 ## Files
 - `scripts/preamble.txt`, `scripts/suite_prompt.txt`, `scripts/jobs.txt`, `scripts/driver.sh`, `scripts/analyze.py`, `scripts/harness/` (copy of the shared harness and fixtures)

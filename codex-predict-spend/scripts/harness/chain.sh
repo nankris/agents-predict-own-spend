@@ -3,8 +3,8 @@
 # One long Codex session: fix the 14 SUITE14 packages one per turn, resuming the same thread
 # with `codex exec resume <thread_id>`. Each turn is a row in EXP/results/runs.csv (task=<pkg>,
 # tag=chain). With FRESH=1 every package gets its own fresh `codex exec` (no resume) in the same dir. Final check `node run_all.js` is recorded as task=CHAIN_TOTAL by summarize step.
-source /workspace/tools/setup.sh
-H=/workspace/work/tig/_harness
+[ -f "${TOOLS_ENV:-}" ] && source "$TOOLS_ENV" >/dev/null 2>&1
+H=${H:-$(cd "$(dirname "$0")" && pwd)}
 EXP=$1; COND=$2; REP=$3; shift 3
 CFG=()
 for c in "$@"; do CFG+=(--cfg "$c"); done

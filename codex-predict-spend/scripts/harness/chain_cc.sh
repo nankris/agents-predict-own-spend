@@ -2,8 +2,8 @@
 # chain_cc.sh EXP COND REP NPKG [extra claude args...]
 # Fix SUITE14 packages one per turn in ONE working dir. Default: one long Claude session (claude -p --resume <id>).
 # With FRESH=1 every package gets its own fresh claude -p (no resume) in the same dir.
-source /workspace/tools/setup.sh >/dev/null 2>&1
-H=/workspace/work/tig/_harness
+[ -f "${TOOLS_ENV:-}" ] && source "$TOOLS_ENV" >/dev/null 2>&1
+H=${H:-$(cd "$(dirname "$0")" && pwd)}
 EXP=$1; COND=$2; REP=$3; N=$4; shift 4
 FL=(); for c in "$@"; do FL+=(--flag="$c"); done
 WORK=$(mktemp -d /tmp/tigccchain_XXXX); rm -rf "$WORK"; cp -r $H/fixtures/SUITE14 "$WORK"

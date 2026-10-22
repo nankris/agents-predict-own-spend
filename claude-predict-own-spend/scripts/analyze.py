@@ -41,4 +41,4 @@ for i,(k,t) in enumerate((("total","total tokens"),("output","output tokens"))):
     ax[i].set_xscale("log"); ax[i].set_yscale("log"); ax[i].set_xlabel(f"self-estimate ({t})"); ax[i].set_ylabel(f"actual ({t})"); ax[i].legend(fontsize=8)
     ax[i].set_title(f"{t}: points above the line = underestimate")
     from matplotlib.ticker import NullFormatter; ax[i].xaxis.set_minor_formatter(NullFormatter()); ax[i].yaxis.set_minor_formatter(NullFormatter())
-plt.suptitle("#020 Can Claude Code predict its own spend? (11 tasks × opus/haiku)",fontsize=11); plt.tight_layout(); plt.savefig(f"{D}/results/chart.png",dpi=110)
+plt.suptitle("Can Claude Code predict its own spend? (11 tasks × opus/haiku)",fontsize=11); plt.tight_layout(); plt.savefig(f"{D}/results/chart.png",dpi=110)

@@ -1,6 +1,6 @@
 # I asked Claude Code to guess its own token bill first. It guessed "60,000" every time.
 
-*Draft. Tech in General experiment #020. 22 headless Claude Code runs, 2026-10-15 IST.*
+*22 headless Claude Code runs, 2026-10-15 IST.*
 
 Before each task, the agent had to write one line: how many total tokens, output tokens and model calls it expected. Then it did the task. 11 tasks, Opus 5.5 and Haiku 5.5.
 
@@ -10,6 +10,6 @@ Before each task, the agent had to write one line: how many total tokens, output
 
 **Both overestimated output, not under.** The common claim is that models underestimate their usage. Here they consistently thought they'd write more than they did.
 
-**Takeaway.** Don't use the agent's own guess as a budget. Measure a few runs and use those — on Claude Code, cost per task is very repeatable (see #010b).
+**Takeaway.** Don't use the agent's own guess as a budget. Measure a few runs and use those — on Claude Code, cost per task is very repeatable (see my [agent cost variance study](https://github.com/nankris/agent-cost-variance)).
 
 *Token counts from Claude Code's usage output; cost figures are API-equivalent estimates, Pro isn't billed per token.*

@@ -1,4 +1,4 @@
-"""#020 Codex arm: parse the ESTIMATE line from each run's first agent message and compare with actual usage."""
+"""Codex arm: parse the ESTIMATE line from each run's first agent message and compare with actual usage."""
 import csv, json, re, os, statistics as st
 import numpy as np, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 E = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); R = f"{E}/results"
@@ -57,5 +57,5 @@ for i, (k, lab) in enumerate([("total", "total tokens"), ("output", "output toke
     ax[i].set_xlabel(f"Codex's estimate ({lab})"); ax[i].set_ylabel(f"actual ({lab})")
     ax[i].set_title(f"{lab}: median actual/est {summ[f'median_actual_over_est_{k}']}, log-r {summ[f'logcorr_{k}']}", fontsize=10)
 ax[0].scatter([], [], c="tab:blue", label="single package"); ax[0].scatter([], [], c="tab:red", label="SUITE14 (14 pkgs)"); ax[0].legend(fontsize=8)
-fig.suptitle("#020 Can Codex (gpt-6.1-sol) predict its own spend? 22 runs, estimate given before reading any file")
+fig.suptitle("Can Codex (gpt-6.1-sol) predict its own spend? 22 runs, estimate given before reading any file")
 fig.tight_layout(); fig.savefig(f"{R}/chart.png", dpi=110)
